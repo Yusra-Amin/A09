@@ -2,6 +2,9 @@
 :root {
 	--accent-color: #800000;  /* could also be coded #800 */
 	--gradient-color: #f6bb73;
+	--light-color: #ffffff;
+	--mid-color: #aa804f;
+	--dark-color: #000000;
 }
 
 /* reset */
@@ -26,6 +29,7 @@ h1, h2, h3, p, ul {
 a:hover, a:focus{
 	font-style: italic;
 	color: var(--accent-color);
+	background-color: var(--mid-color);
 }
 h1 {
 	font-size: 150%;
@@ -125,4 +129,60 @@ footer {
 }
 .large {
 	font-size: 125%;
+}
+
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: space-around;
+	list-style-type: none;
+}
+
+.menu li:has(.submenu) {
+	flex-basis: 20%;
+	text-align: center;
+	position: relative;
+	& small {
+		margin-left: .25em;
+	}
+
+	&:hover > .submenu {
+		display: block;
+	}
+}
+
+.submenu {
+	position: absolute;
+	left: -30%;
+	background-color: var(--accent-color);
+	color: var(--light-color);
+	display: none;
+
+	& > li a {
+		margin: 0 2px 2px;
+	}
+}
+
+.menu > li:first-child a{
+	margin-left: 0;
+}
+
+.menu > li:last-child a{
+	margin-right: 0;
+}
+
+.navbar {
+	background-color: var(--accent-color);
+
+	& a {
+		display: block;
+		padding: 1em;
+		text-decoration: none;
+		color: var(--light-color);
+		margin: 0px 1px 2px;
+	}
+}
+
+.current a {
+	background-color: var(--mid-color)
 }
