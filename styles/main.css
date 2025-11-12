@@ -153,7 +153,8 @@ footer {
 
 .submenu {
 	position: absolute;
-	left: -30%;
+	left: 0;
+	right:0;
 	background-color: var(--accent-color);
 	color: var(--light-color);
 	display: none;
